@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Registeration{% endblock %}
+{% block title %}Regístrese{% endblock %}
 {% block body %}
 <style>
     body {
@@ -13,7 +13,7 @@
 <div class="joinus-banner" style="background-image: url('../static/aeroplane-bg2.png');">
     <div style="margin-left: 20px;">
         <div class="form" align='center' >
-            <h1>Registro</h1>
+            <h1>Regístrese</h1>
             <br>
             <form style="display: inline-block; text-align: center;" align='center' method="post">
                 <label for="">Perfil : </label>
@@ -22,12 +22,12 @@
                     <option value="pilot">Piloto</option>
                   </select><br>
                 <input type="text" placeholder="Nombre" name='name'><br>
-                <input type="email" placeholder="Email" name="email"><br>
+                <input type="email" placeholder="Correo electrónico" name="email"><br>
                 <input type="password" placeholder="Contraseña" name="password"><br>
                 <input type="password" placeholder="Confirmar Contraseña" name="confirm"><br><br>
                 <button class="btn">Register</button>
                 <br>
-                <a href="/register" style="color: white; font-size: 16px;" class="link">Not A user? Register yourself!</a>
+                <a href="/register" style="color: white; font-size: 16px;" class="link">No es un ususario? <Strong>Regístrese aquí</Strong></a>
             </form>
         </div>
     </div>
