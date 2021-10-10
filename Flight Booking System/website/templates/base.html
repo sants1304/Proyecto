@@ -24,7 +24,7 @@
     <nav>
         {% if user and user.role == 'pilot' %}
         <div class="logo">
-            Dashboard
+            Portal de pilotos
         </div>
         <div class="links">
             <a href="/" class="link">Inicio</a>
@@ -34,14 +34,14 @@
         </div>
         {% elif user %}
         <div class="logo">
-            Dashboard
+            Portal de usuarios
         </div>
         <div class="links">
             <a href="/" class="link">INICIO</a>
             <a href="/about" class="link">¿Quiénes somos?</a>
             <a href="/contact" class="link">Contáctenos</a>
-            <!-- <a href="/reservation" class="link">Reservation</a> -->
-            <!-- <a href="/your-flights" class="link">Your Flights</a> -->
+            <!-- <a href="/reservation" class="link">Reservación</a> -->
+            <!-- <a href="/your-flights" class="link">Sus vuelos</a> -->
         </div>
         {% else %}
         <div class="logo">
@@ -52,7 +52,7 @@
             <a href="/about" class="link">¿Quiénes somos?</a>
             <a href="/contact" class="link">Contáctenos</a>
             <a href="/login" class="link">Login</a>
-            <!-- /*<a href="/register" class="link">Registeration</a>*/ -->
+            <!-- /*<a href="/register" class="link">Regístrese</a>*/ -->
         </div>
         {% endif %}
     </nav>
