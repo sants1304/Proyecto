@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Registeration{% endblock %}
+{% block title %}Regístrese{% endblock %}
 {% block body %}
 
 <link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
@@ -26,12 +26,12 @@
 
 <div class="joinus-banner">
     <div>
-        <h1>Contactenos</h1><br>
+        <h1>Contáctenos</h1><br>
         <form method="post">
             <div class="inputs" align='center'>
                 <input type="text" placeholder="Asunto" name="subject"><br>
-                <textarea placeholder="Comentario" name="comment"></textarea><br><br>
-                <button class="btn">Comentario</button>
+                <textarea placeholder="Ingrese su comentario" name="comment"></textarea><br><br>
+                <button class="btn">Enviar</button>
             </div>
         </form>
     </div>
