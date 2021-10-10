@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}INICIO{% endblock %}
+{% block body %}
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='features.css')}}">
+
+
+
+<div class="joinus-banner">
+    <div style="margin-left: 20px;">
+        <h1 class="tagline">¿A donde te  <br> gustaria viajar?</h1>
+        <p class="supportline">Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+            default model text, and a search for 'lorem ipsum' will uncover many websites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour
+            and the like.) </p>
+        <button class="btn">Acompañanos</button>
+    </div>
+</div>
+
+<div class="features-banner">
+    <div>
+        <h1 class="tagline">Vuelos al mejor precio con servicio premium</h1>
+        <br><br>
+        <div class="features">
+            <div class="feature">Lorem ipsum is therefore always free form repetition, injected humour?</div>
+            <div class="feature">Lorem ipsum is therefore always free form repetition, injected humour?</div>
+            <div class="feature">Lorem ipsum is therefore always free form repetition, injected humour?</div>
+        </div>
+    </div>
+</div>
+
+<div class="comment-banner">
+    <div>
+        <h1>Comentarios</h1>
+        <br><br>
+        <form align='center' method="post">
+            <div>
+            <input type="text" name="username" placeholder="Usuario"><br><br>
+            <input type="email" name="email" placeholder="Email" ><br><br>
+            <input type="text" name="contact" placeholder="Contacto" >
+        </div>
+            <div>
+            <input type="text" name="subject" placeholder="Asunto"><br><br>
+            <textarea name="comment" placeholder="Comentario"></textarea><br><br>
+            <button class="btn" type="submit" style="color: gray; background-color: white;">Done</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

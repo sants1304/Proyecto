@@ -1,0 +1,106 @@
+{% extends '/admin/base.html' %}
+{% block body %}
+<style>
+    body{
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+</style>
+
+<br><br>
+<h1>Pilotos</h1>
+<br><br>
+<style>
+    .title {
+        margin: 40px 0px 10px 0px;
+    }
+
+    input {
+        border: none;
+        border-bottom: 3px solid;
+        padding: 15px;
+        outline: none;
+        font-size: 20px;
+        margin: 10px;
+    }
+
+    button {
+        margin: 15px;
+        padding: 10px 35px;
+        font-size: 20px;
+        border: 3px solid rgb(108, 225, 230);
+        background-color: rgb(103, 217, 221);
+        border-radius: 22px;
+        color: white;
+        cursor: pointer;
+    }
+
+    a{
+        color: blue;
+        text-decoration: none;
+    }
+
+    a:hover{
+        text-decoration: underline;
+    }
+
+    th {
+        padding: 10px;
+        border: 1px solid;
+        margin: 0px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 90%;
+        border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+</style>
+
+<center>
+    <div style="overflow-x:auto;">
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Nacionalidad</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Numero de contacto</th>
+                    <th>Dirección</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                    <th>Asignar</th>
+                </tr>
+                {% for pilot in pilots %}
+                <tr>
+                    <th>{{pilot.name}}</th>
+                    <th>{{pilot.email}}</th>
+                    <th>{{pilot.nationality}}</th>
+                    <th>{{pilot.dob}}</th>
+                    <th>{{pilot.contact_no}}</th>
+                    <th>{{pilot.address}}</th>
+                    <th><a href="/admin/user/edit/{{pilot.id}}">Editar</a></th>
+                    <th><a href="/admin/user/delete/{{pilot.id}}">Eliminar</a></th>
+                    <th><a href="/admin/user/assign/{{pilot.id}}">Asignar</a></th>
+                </tr>
+                {% endfor %}
+            </thead>
+        </table>
+    </div>
+</center>
+
+<br><br><br>
+
+{% endblock %}

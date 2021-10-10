@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Registeration{% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    input{
+        width: 80%;
+        min-width: 280px;
+        max-width: 600px;
+    }
+
+    textarea{
+        width: 80%;
+        min-width: 280px;
+        max-width: 600px;
+        height: 150px;
+    }
+</style>
+
+<div class="joinus-banner">
+    <div>
+        <h1>Contactenos</h1><br>
+        <form method="post">
+            <div class="inputs" align='center'>
+                <input type="text" placeholder="Asunto" name="subject"><br>
+                <textarea placeholder="Comentario" name="comment"></textarea><br><br>
+                <button class="btn">Comentario</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+{% block body %}
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+
+<div class="joinus-banner" style="background-image: url('../static/aeroplane-bg2.png');">
+    <div style="margin-left: 20px;">
+        <div class="form" align='center' >
+            <h1>Login</h1>
+            <br>
+            <form style="display: inline-block; text-align: center;" align='center' method="post">
+                <input type="email" placeholder="Email" name="email"><br>
+                <input type="password" placeholder="Contraseña" name="password"><br><br>
+                <button class="btn">Login</button>
+                <br><br>
+                <a href="/register" style="color: white; font-size: 16px;" class="link">Not A user? Register yourself!</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

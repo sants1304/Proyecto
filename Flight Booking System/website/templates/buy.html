@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Reserve su vuelo{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+<style>
+    body{
+        text-align: center;
+    }
+    input{
+        border: 3px solid;
+    }
+</style>
+
+<form action="">
+    <input type="number" name="capacity" placeholder="Number of people">
+    <button class="btn">Comprar</button>
+</form>
+
+<br><br>
+
+<h1>Aerolinea: {{flight.airline}}</h1><br>
+<h1 class="loc">Desde {{flight.origin}} a {{flight.dest}}</h1>
+<h1 class="time"Salida {{flight.dept_time}} llegada {{flight.arr_time}}</h1>
+<h1 class="date">Fecha : {{flight.date}}</h1>
+<h1 class="cost">Costo : ${{flight.cost}}</h1>
+
+{% endblock %}

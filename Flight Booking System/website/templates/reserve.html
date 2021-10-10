@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Reserve{% endblock %}
+{% block body %}
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    input{
+        width: 100%;
+    }
+    .flights{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .flight{
+        display: inline;
+        padding: 40px;
+        border: 3px solid;
+        margin: 40px;
+        border-radius: 22px;
+        text-align: center;
+    }
+    .airline-name{
+        font-size: 36px;
+    }
+    .btn{
+        padding: 10px 30px;
+        border: 3px solid;
+    }
+    .flight *{
+        margin: 10px;
+    }
+</style>
+
+<div class="flights">
+    {% for flight in flights %}
+    {% if flightbk(flight.id) < flight.capacity %}
+    <div class="flight">
+        <div class="airline-name">{{flight.airline}}</div>
+        <div class="loc">{{flight.origin}} -> {{flight.dest}}</div>
+        <div class="time">{{flight.dept_time}} - {{flight.arr_time}}</div>
+        <div class="date">{{flight.date}}</div>
+        <div class="cost">${{flight.cost}}</div>
+        <a href="/buy/{{flight.id}}"><button class="btn">Buy</button></a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
