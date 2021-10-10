@@ -11,17 +11,19 @@
     }
 </style>
 
+<h1><Strong>Información del vuelo</Strong></h1>
+
 <form action="">
-    <input type="number" name="capacity" placeholder="Number of people">
-    <button class="btn">Comprar</button>
+    <input type="number" name="capacity" placeholder="Número de personas">
+    <button class="btn"><Strong>Comprar</Strong></button>
 </form>
 
 <br><br>
 
-<h1>Aerolinea: {{flight.airline}}</h1><br>
-<h1 class="loc">Desde {{flight.origin}} a {{flight.dest}}</h1>
-<h1 class="time"Salida {{flight.dept_time}} llegada {{flight.arr_time}}</h1>
-<h1 class="date">Fecha : {{flight.date}}</h1>
-<h1 class="cost">Costo : ${{flight.cost}}</h1>
+<h1><Strong>Aerolínea</Strong>: {{flight.airline}}</h1><br>
+<h1 class="loc"><Strong>Desde</Strong> {{flight.origin}} <Strong>hacia</Strong> {{flight.dest}}</h1>
+<h1 class="time"<Strong>Hora de salida</Strong> {{flight.dept_time}} <Strong>Hora de llegada</Strong> {{flight.arr_time}}</h1>
+<h1 class="date"><Strong>Fecha del vuelo</Strong>: {{flight.date}}</h1>
+<h1 class="cost"><Strong>Precio</Strong>: ${{flight.cost}}</h1>
 
 {% endblock %}
