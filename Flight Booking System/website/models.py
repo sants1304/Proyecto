@@ -23,6 +23,7 @@ class Flight(db.Model):
     pilotid = db.Column(db.Integer)
     capacity = db.Column(db.Integer)
     cost = db.Column(db.Integer)
+    status = db.Column(db.String(100))
 
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)

@@ -38,8 +38,7 @@
         {% for flight in flights %}
         <div class="flight">
             <input style="width: 20px; height: 20px; margin: 15px;" type="radio" name="assigned" value="{{flight.id}}" id="">
-            <h1 class="airline-name">{{flight.airline}}</h1>
-            <p class="trip">{{flight.origin}} -> {{flight.dest}}</p>
+            <h1 class="airline-name">{{flight.name}}</h1>
         </div>
         {% endfor %}
         <br><br>

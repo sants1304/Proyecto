@@ -1,6 +1,6 @@
 {% if yes %}
 {% extends 'base.html' %}
-{% block title %}Your Flights{% endblock %}
+{% block title %}Sus vuelos{% endblock %}
 {% else %}
 {% extends '/admin/base.html' %}
 {% endif %}
@@ -14,10 +14,10 @@
 </style>
 {% if not yes %}
 <br><br>
-<a href="flight/add"><button>Agregar vuelo</button></a>
+<a href="flight/add"><button>Añadir vuelo</button></a>
 {% else %}
 <br><br>
-<h1>Tus vuelos</h1>
+<h1>Sus vuelos</h1>
 {% endif %}
 <br><br>
 <style>
@@ -83,8 +83,13 @@
         <table class="content-table">
             <thead>
                 <tr>
-                    <th>Nombre Aerolinea</th>
+                    <th>Aeroínea</th>
+                    <th>Estado</th>
                     {% if not yes %}
+                    <th>Asignar</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                    <th>Ver</th>
                     <th>Piloto</th>
                     {% endif %}
                     <th>Origen</th>
@@ -92,6 +97,10 @@
                     <th>Fecha</th>
                     <th>Hora de salida</th>
                     <th>Hora de llegada</th>
+                    <th>Código de vuelo</th>
+                    {%if yes%}
+                    <th>Ver</th>
+                    {% endif %}
                     {% if not yes %}
                     <th>Costo</th>
                     <th>Capacidad</th>
@@ -100,7 +109,12 @@
                 {% for flight in flights %}
                 <tr>
                     <th>{{flight.airline}}</th>
+                    <th>{{flight.status}}</th>
                     {% if not yes %}
+                    <th><a href="/admin/flight/assign/{{flight.id}}">Asignar</a></th>
+                    <th><a href="/admin/flight/edit/{{flight.id}}">Editar</a></th>
+                    <th><a href="/admin/flight/delete/{{flight.id}}">Borrar</a></th>
+                    <th><a href="/admin/view/{{flight.id}}">Ver</a></th>
                     <th>{{get(flight.pilotid).name}}</th>
                     {% endif %}
                     <th>{{flight.origin}}</th>
@@ -108,6 +122,10 @@
                     <th>{{flight.date}}</th>
                     <th>{{flight.dept_time}}</th>
                     <th>{{flight.arr_time}}</th>
+                    <th>{{fl(flight)}}</th>
+                    {%if yes%}
+                    <th><a href="/buy/{{flight.id}}">Ver</a></th>
+                    {% endif %}
                     {% if not yes %}
                     <th>{{flight.cost}}</th>
                     <th>{{bookings(flight.id)}}/{{flight.capacity}}</th>

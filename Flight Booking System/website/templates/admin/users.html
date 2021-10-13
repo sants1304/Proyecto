@@ -74,13 +74,13 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Email</th>
+                    <th>Correo electrónico</th>
                     <th>Nacionalidad</th>
                     <th>Fecha de nacimiento</th>
-                    <th>Numero de contacto</th>
-                    <th>Direccion</th>
+                    <th>Númbero de contacto</th>
+                    <th>Dirección</th>
                     <th>Editar</th>
-                    <th>Eliminar</th>
+                    <th>Borrar</th>
                 </tr>
                 {% for pilot in users %}
                 <tr>
@@ -91,7 +91,7 @@
                     <th>{{pilot.contact_no}}</th>
                     <th>{{pilot.address}}</th>
                     <th><a href="/admin/user/edit/{{pilot.id}}">Editar</a></th>
-                    <th><a href="/admin/user/delete/{{pilot.id}}">Eliminar</a></th>
+                    <th><a href="/admin/user/delete/{{pilot.id}}">Borrar</a></th>
                 </tr>
                 {% endfor %}
             </thead>

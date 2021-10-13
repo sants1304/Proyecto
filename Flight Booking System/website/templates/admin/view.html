@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block title %}Reserve{% endblock %}
+{% extends '/admin/base.html' %}
 {% block body %}
 <link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
 <style>
@@ -9,22 +8,13 @@
     input{
         border: 3px solid;
     }
-    .btn{
-        font-size: 25px;
-        color: blue
-    }
 </style>
 
 <br><br><br>
 
 <h1 class="titulo"><Strong>Información del vuelo</Strong></h1>
 
-<form action="">
-    <input type="number" name="capacity" placeholder="Número de personas">
-    <button class="btn"><Strong>Comprar</Strong></button>
-</form>
-
-<br>
+<br><br>
 <h1><Strong>Status</Strong> : {{flight.status   }}</h1>
 <h1><Strong>Código de vuelo</Strong> : {{fl(flight)}}</h1>
 <h1><Strong>Aerolínea</Strong> : {{flight.airline}}</h1>

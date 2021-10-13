@@ -1,5 +1,5 @@
 from datetime import datetime, date
-from .admin import flight_bookings
+from .admin import flight_bookings, get_flightcode, getUserFromid
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
 from .models import *
@@ -31,7 +31,7 @@ def home():
     else:
         return render_template('home.html', user=None)
 
-@views.route('/about')
+@views.route('/about', methods=['GET'])
 def about():
     if current_user.is_authenticated:
         return render_template('about.html', user=current_user)
@@ -75,10 +75,9 @@ def your_flights():
         for booking in bookings:
             flight = Flight.query.filter_by(id=booking.flightid).first()
             flights.append(flight)
-    return render_template('/admin/flights.html', user=current_user, flights=flights, yes=True)
+    return render_template('/admin/flights.html', user=current_user, flights=flights, yes=True, fl=get_flightcode)
 
-@views.route('/buy/<id>')
-@login_required
+@views.route('/buy/<id>', methods=['GET'])
 def buy(id):
     flight = Flight.query.filter_by(id=id).first()
     try:
@@ -88,4 +87,4 @@ def buy(id):
        db.session.commit()
        return redirect('/your-flights')
     except:
-        return render_template('buy.html', user=current_user, flight=flight)
+        return render_template('buy.html', user=current_user, flight=flight, fl=get_flightcode, get=getUserFromid)

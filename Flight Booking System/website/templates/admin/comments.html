@@ -39,6 +39,7 @@
     <p class="comment-title">{{comment.subject}}</p>
     <p class="comment-subject">{{comment.comment}}</p>
     <p class="comment-subject">By : <b>{{get(comment.userid).email}}</b></p>
+    <a href="/admin/comment/delete/{{comment.id}}" class="link">Borrar</a>
 </div>
 {% endfor %}
 

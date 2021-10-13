@@ -1,5 +1,4 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
-import flask
 from .models import *
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
@@ -26,7 +25,7 @@ def login():
             login_user(user)
             return redirect(url_for('views.home'))
 
-    return render_template('login.html', user=None)
+    return render_template('login.html', user=None, l=True)
 
 
 @auth.route('/register', methods=['GET', 'POST'])
@@ -55,4 +54,9 @@ def register():
             flash('Account created Successfully', category='success')
             return redirect(url_for('views.home'))
 
-    return render_template('register.html', user=None)
+    return render_template('register.html', user=None, r=True, l=True)
+
+@auth.route('/logout', methods=['GET'])
+def logout():
+    logout_user()
+    return redirect(url_for('auth.login'))

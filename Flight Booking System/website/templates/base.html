@@ -27,21 +27,18 @@
             Portal de pilotos
         </div>
         <div class="links">
-            <a href="/" class="link">Inicio</a>
-            <a href="/about" class="link">¿Quiénes somos?</a>
-            <a href="/contact" class="link">Contáctenos</a>
-            <a href="/your-flights" class="link">Tus vuelos</a>
+            <a href="/your-flights" class="link">Sus vuelos</a>
+            <a href="/logout" class="link">Logout</a>
         </div>
         {% elif user %}
         <div class="logo">
             Portal de usuarios
         </div>
         <div class="links">
-            <a href="/" class="link">INICIO</a>
-            <a href="/about" class="link">¿Quiénes somos?</a>
             <a href="/contact" class="link">Contáctenos</a>
-            <!-- <a href="/reservation" class="link">Reservación</a> -->
-            <!-- <a href="/your-flights" class="link">Sus vuelos</a> -->
+            <a href="/reservation" class="link">Reservación</a>
+            <a href="/your-flights" class="link">Sus vuelos</a>
+            <a href="/logout" class="link">Logout</a>
         </div>
         {% else %}
         <div class="logo">
@@ -49,10 +46,19 @@
         </div>
         <div class="links">
             <a href="/" class="link">INICIO</a>
+            {% if not l %}
             <a href="/about" class="link">¿Quiénes somos?</a>
             <a href="/contact" class="link">Contáctenos</a>
             <a href="/login" class="link">Login</a>
-            <!-- /*<a href="/register" class="link">Regístrese</a>*/ -->
+            {% else %}
+            {% if not r %}
+            <a href="/about" class="link">¿Quiénes somos?</a>
+            <a href="/contact" class="link">Contáctenos</a>
+            <a href="/register" class="link">Regístrese</a>
+            {% else %}
+            <a href="/login" class="link">Login</a>
+            {% endif %}
+            {% endif %}
         </div>
         {% endif %}
     </nav>
@@ -75,7 +81,7 @@
     {% block body %}{% endblock %}
 
     <footer>
-        <div> &copy;"Derechos reservados Aeropuerto Santa Ana"</div>
+        <div> &copy;Derechos reservados Aeropuerto Santa Ana</div>
         <div>Privacidad | Términos & Condiciones</div>
     </footer>
 
