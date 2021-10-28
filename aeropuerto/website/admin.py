@@ -51,7 +51,7 @@ def edit(id):
         nationlity = request.form.get('nationality')
         contact = request.form.get('contact')
         email = request.form.get('email')
-        flash('Edited User', category='success')
+        flash('Los cambios se han guardado exitosamente', category='success')
 
         user = User.query.filter_by(id=id).first()
         user.name =  name
@@ -70,7 +70,7 @@ def edit(id):
 @admin.route('/user/delete/<id>', methods=['GET'])
 def delete(id):
     user = User.query.filter_by(id=id).first()
-    flash('Deleted User '+user.name, category='success')
+    flash('Usuario eliminado '+user.name, category='success')
     db.session.delete(user)
     db.session.commit()
     if user.role == 'buyer':
@@ -85,7 +85,7 @@ def assign(id):
         flight = Flight.query.filter_by(id=assigned).first()
         flight.pilotid=id
         db.session.commit()
-        flash('Flight Assigned', category='success')
+        flash('Vuelo asignado', category='success')
         return redirect('/admin/pilots')
     except:
         pass
@@ -143,7 +143,7 @@ def edit_flight(id):
         date = request.form.get('date')
         dept = request.form.get('dept-time')
         arr = request.form.get('arr-time')
-        flash('Edited Flight', category='success')
+        flash('Los cambios en su vuelo se han guardado exitosamente', category='success')
 
         flight = Flight.query.filter_by(id=id).first()
         flight.status = status
@@ -168,7 +168,7 @@ def assign_flight(id):
         flight = Flight.query.filter_by(id=id).first()
         flight.pilotid=assigned
         db.session.commit()
-        flash('Assigned Flight', category='success')
+        flash('Vuelo asignado', category='success')
         return redirect('/admin/flights')
     except:
         pass
@@ -183,7 +183,7 @@ def assign_flight(id):
 @admin.route('/flight/delete/<id>')
 def delete_flight(id):
     flight = Flight.query.filter_by(id=id).first()
-    flash('Deleted Flight '+get_flightcode(flight), category='success')
+    flash('Se ha eliminado el vuelo '+get_flightcode(flight), category='success')
     db.session.delete(flight)
     db.session.commit()
     return redirect(url_for('admin.flights'))
@@ -196,7 +196,7 @@ def comments():
 @admin.route('/comment/delete/<id>', methods=['GET'])
 def delete_comment(id):
     user = Feedback.query.filter_by(id=id).first()
-    flash('Deleted Comment '+user.subject, category='success')
+    flash('Se ha borrado el comentario exitosamente '+user.subject, category='success')
     db.session.delete(user)
     db.session.commit()
     return redirect(url_for('admin.comments'))
