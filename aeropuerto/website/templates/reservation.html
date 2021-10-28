@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Reserve{% endblock %}
+{% block body %}
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    input{
+        width: 100%;
+    }
+</style>
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='features.css')}}">
+
+<div align='center' class="joinus-banner">
+    <div>
+
+        <h1>Reserve</h1><br>
+        <form action="">
+            <div align='center'>
+                <input type="text" name="origin" placeholder="Origen" id=""><br>
+                <input type="text" name="dest" placeholder="Destino" id=""><br>
+                <input type="date" name="date" placeholder="Fecha de viaje" id=""><br><br>
+                <button class="btn">Buscar vuelo</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}¿Quiénes somos?{% endblock %}
+{% block body %}
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    .heading{
+        font-weight: 900;
+        padding: 10px 30px;
+        border-radius: 10px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-size: 3em;
+    }
+    .para{
+        width: 80%;
+        max-width: 700px;
+        font-weight: 600;
+        margin: auto;
+    }
+</style>
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+
+<div class="joinus-banner" style="background-image: url('../static/aeroplane-bg1.jpg'); height: 100vh;">
+    <h1 class="heading">Aeropuerto Santa Ana</h1>
+</div>
+<br><br><br>
+<div style="text-align: center;">
+    <h1 class="heading" style="background-color: transparent; color: #000;" >¿Quiénes somos?</h1><br>
+    <p class="para">Somos una entidad comercial e industrial del estado que presta de manera efectiva servicios aeroportuarios con compromiso y responsabilidad. Garantizando operaciones continuas, oportunas y efectivas a la región Norte Vallecaucana y del eje cafetero. El aeropuerto internacional Santa Ana S.A. se encuentra ubicado en todo el corazón del norte del valle con un escenario perfecto y una pista de 2200 metros para vuelos privados, escuelas de aviación y vuelos de turismo entre otros. Considerados uno de los mejores aeropuertos construidos a nivel nacional por la dirección de sus vientos y las excelentes condiciones climáticas que ofrece al momento del despegue y aterrizaje.</p>
+</div>
+<br><br><br>
+{% endblock %}

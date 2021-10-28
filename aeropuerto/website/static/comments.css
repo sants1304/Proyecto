@@ -1,0 +1,48 @@
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form>div{
+    display: block;
+}
+
+.comment-banner{
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    color: white;
+}
+
+input{
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    border-radius: 22px;
+    background-color: white;
+    margin: 10px;
+}
+
+textarea{
+    padding: 20px 30px;
+    border-radius: 22px;
+    height: 100px;
+    outline: none;
+}
+
+label{
+    font-size: 28px;
+}
+
+select{
+    padding: 10px 30px;
+    outline: none;
+    border: none;
+    border-radius: 22px;
+    background-color: white;
+    margin: 10px;
+}

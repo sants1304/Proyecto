@@ -1,0 +1,46 @@
+{% extends '/admin/base.html' %}
+{% block body %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+    }
+
+    form > div> * {
+        border: 3px solid;
+    }
+
+    .btn{
+        background-color: black;
+        color: white;
+        border: 3px solid black;
+    }
+
+    .btn:hover{
+        border: 3px solid black;
+        background-color: white;
+    }
+</style>
+<br><br>
+<br>
+<h1>Editar Vuelo</h1>
+<br>
+<form align='center' method="post">
+    <div>
+        <input type="text" value="{{flight.status}}" placeholder="Status" name="status"><br>
+        <input type="text" value="{{flight.airline}}" placeholder="Aerolínea" name="airline"><br>
+        <input type="text" value="{{flight.origin}}" placeholder="Origen" name="from"><br>
+        <input type="text" value="{{flight.dest}}" placeholder="Destino" name="to"><br>
+        <input type="date" value="{{flight.date}}" placeholder="Fecha de vuelo" name="date"><br>
+        <input type="time" value="{{flight.dept_time}}" placeholder="Hora de salida" name="dept-time"><br>
+        <input type="time" value="{{flight.arr_time}}" placeholder="Hora de llegada" name="arr-time"><br>
+        <input type="number" value="{{flight.cost}}" placeholder="Costo" name="cost"><br>
+        <input type="number" value="{{flight.capacity}}" placeholder="Capacidad" name="capacity"><br>
+        <button class="btn">Editar</button>
+    </div>
+</form>
+<br><br>
+{% endblock %}

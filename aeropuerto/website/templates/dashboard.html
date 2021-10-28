@@ -1,0 +1,40 @@
+{% if yes == True %}
+{% extends '/admin/base.html' %}
+{% else %}
+{% extends 'base.html' %}
+{% endif %}
+{% block title %}INICIO{% endblock %}
+{% block body %}
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='features.css')}}">
+
+<div class="joinus-banner">
+    <div>
+        <h1>Perfil</h1>
+        <br><br>
+        <form align='center' method="post">
+            <div>
+            <input type="text" name="name" value="{{user.name}}" placeholder="Nombre"><br>
+            <input type="email" name="email" value="{{user.email}}"  placeholder="Correo electrónico" ><br>
+            <input type="number" name="contact" value="{{user.contact_no}}"  placeholder="Número de contacto" >
+        </div>
+            <div>
+            <input type="date" name="dob" value="{{user.dob}}"  placeholder="Fecha de nacimiento"><br>
+            <input type="text" name="address" value="{{user.address}}" placeholder="Dirección"></input><br>
+            <input type="text" name="nationality" value="{{user.nationality}}"  placeholder="Nationalidad"></input><br>
+            <button class="btn" type="submit" style="color: gray; background-color: white;">Enviar</button>
+        </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

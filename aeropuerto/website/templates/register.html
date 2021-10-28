@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Regístrese{% endblock %}
+{% block body %}
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<link rel="stylesheet" href="{{url_for('static', filename='intro.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+
+<div class="joinus-banner" style="background-image: url('../static/aeroplane-bg2.png');">
+    <div style="margin-left: 20px;">
+        <div class="form" align='center' >
+            <h1>Registeration</h1>
+            <br>
+            <form style="display: inline-block; text-align: center;" align='center' method="post">
+                <label for="">Rol: </label>
+                <select name="role" id="roles">
+                    <option value="buyer">Usuario</option>
+                    <option value="pilot">Piloto</option>
+                </select><br>
+                <input type="text" placeholder="Nombre" name='name'><br>
+                <input type="email" placeholder="Correo electrónico" name="email"><br>
+                <input type="password" placeholder="Contraseña" name="password"><br>
+                <input type="password" placeholder="Confirme contraseña" name="confirm"><br><br>
+                <button class="btn">Regístrese</button>
+                <br>
+                <a href="/login" style="color: white; font-size: 16px;" class="link">¿Ya es un usuario? <Strong>Inicie sesión aquí</Strong></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

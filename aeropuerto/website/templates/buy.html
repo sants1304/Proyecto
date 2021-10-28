@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Reserve{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='comments.css')}}">
+<style>
+    body{
+        text-align: center;
+    }
+    input{
+        border: 3px solid;
+    }
+    .btn{
+        font-size: 25px;
+        color: blue
+    }
+</style>
+
+<br><br><br>
+
+<h1 class="titulo"><Strong>Información del vuelo</Strong></h1>
+
+<form action="">
+    <input type="number" name="capacity" placeholder="Número de personas">
+    <button class="btn"><Strong>Comprar</Strong></button>
+</form>
+
+<br>
+<h1><Strong>Status</Strong> : {{flight.status   }}</h1>
+<h1><Strong>Código de vuelo</Strong> : {{fl(flight)}}</h1>
+<h1><Strong>Aerolínea</Strong> : {{flight.airline}}</h1>
+<h1><Strong>Piloto</Strong> : {{get(flight.pilotid).name}}</h1>
+<h1 class="loc"><Strong>Vuelo desde</Strong> {{flight.origin}} <Strong>hacia</Strong> {{flight.dest}}</h1>
+<h1 class="time"><Strong>Hora de salida</Strong>: {{flight.dept_time}} <Strong>Hora de llegada</Strong>: {{flight.arr_time}}</h1>
+<h1 class="date"><Strong>Fecha de vuelo</Strong> : {{flight.date}}</h1>
+<h1 class="cost"><Strong>Precio</Strong> : ${{flight.cost}}</h1>
+<h1 class="cost"><Strong>Capacidad</Strong> : {{flight.capacity}}</h1>
+<br><br>
+
+{% endblock %}
